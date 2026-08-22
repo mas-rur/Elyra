@@ -5,7 +5,7 @@ import { ChatMessage } from "@/lib/types";
 export function TranscriptPanel({ messages }: { messages: ChatMessage[] }) {
   if (messages.length === 0) {
     return (
-      <p className="text-center text-sm text-mist-400 font-mono">
+      <p className="text-center text-sm text-mist-600 font-mono">
         Tap the mic, or type below, to start.
       </p>
     );
@@ -21,10 +21,10 @@ export function TranscriptPanel({ messages }: { messages: ChatMessage[] }) {
           }`}
         >
           <div
-            className={`inline-block rounded-2xl px-4 py-2.5 text-[15px] leading-relaxed ${
+            className={`inline-block rounded-2xl border px-4 py-2.5 text-[15px] leading-relaxed ${
               m.role === "user"
-                ? "bg-signal-400/15 text-paper-100"
-                : "bg-ink-800 text-paper-100"
+                ? "border-signal-500/20 bg-signal-500/10 text-ink-950"
+                : "border-ink-200 bg-paper-100 text-ink-950"
             }`}
           >
             {m.text}
@@ -37,7 +37,7 @@ export function TranscriptPanel({ messages }: { messages: ChatMessage[] }) {
                   href={s.uri}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-xs font-mono text-mist-400 underline decoration-dotted hover:text-signal-300"
+                  className="text-xs font-mono text-mist-600 underline decoration-dotted hover:text-signal-500"
                 >
                   {new URL(s.uri).hostname.replace("www.", "")}
                 </a>

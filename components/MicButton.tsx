@@ -26,8 +26,8 @@ export function MicButton({
       aria-label={isListening ? "Stop listening" : "Start talking to Elyra"}
       className={`group relative flex h-16 w-16 items-center justify-center rounded-full border transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-40 ${
         isListening
-          ? "border-ember-400 bg-ember-400/10 text-ember-300"
-          : "border-ink-600 bg-ink-900 text-paper-100 hover:border-signal-400/60 hover:text-signal-300"
+          ? "border-ember-500 bg-ember-500/10 text-ember-600"
+          : "border-ink-300 bg-paper-100 text-ink-950 hover:border-signal-500/60 hover:text-signal-500"
       }`}
     >
       <svg
@@ -51,7 +51,7 @@ export function MicButton({
         />
       </svg>
       {isListening && (
-        <span className="absolute inset-0 rounded-full border border-ember-400 animate-ring-pulse" />
+        <span className="absolute inset-0 rounded-full border border-ember-500 animate-ring-pulse" />
       )}
     </button>
   );

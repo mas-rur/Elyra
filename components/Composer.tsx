@@ -27,12 +27,12 @@ export function Composer({
         onChange={(e) => setValue(e.target.value)}
         placeholder="Or type to Elyra..."
         disabled={disabled}
-        className="flex-1 rounded-full border border-ink-700 bg-ink-900 px-4 py-2.5 text-sm text-paper-100 placeholder:text-mist-400 outline-none transition-colors focus:border-signal-400/60 disabled:opacity-50"
+        className="flex-1 rounded-full border border-ink-300 bg-paper-100 px-4 py-2.5 text-sm text-ink-950 placeholder:text-mist-600/70 outline-none transition-colors focus:border-signal-500/60 disabled:opacity-50"
       />
       <button
         type="submit"
         disabled={disabled || !value.trim()}
-        className="rounded-full bg-paper-100 px-4 py-2.5 text-sm font-medium text-ink-950 transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
+        className="rounded-full bg-ink-950 px-4 py-2.5 text-sm font-medium text-paper-50 transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
       >
         Send
       </button>

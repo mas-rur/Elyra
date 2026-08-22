@@ -18,17 +18,17 @@ export function MoodAvatar({
     <div className="relative flex items-center justify-center h-[280px] w-[280px] sm:h-[320px] sm:w-[320px]">
       {/* Outer ambient rings - always drifting gently, faster while active */}
       <div
-        className="absolute inset-0 rounded-full border border-signal-400/20 animate-ring-pulse-slow"
+        className="absolute inset-0 rounded-full border border-signal-500/25 animate-ring-pulse-slow"
         aria-hidden
       />
       <div
-        className="absolute inset-6 rounded-full border border-ember-400/20 animate-ring-pulse-slow"
+        className="absolute inset-6 rounded-full border border-ember-500/25 animate-ring-pulse-slow"
         style={{ animationDelay: "0.6s" }}
         aria-hidden
       />
       {active && (
         <div
-          className="absolute inset-10 rounded-full border-2 border-ember-400/40 animate-ring-pulse"
+          className="absolute inset-10 rounded-full border-2 border-ember-500/45 animate-ring-pulse"
           style={{ transform: `scale(${1 + amplitude * 0.15})` }}
           aria-hidden
         />
