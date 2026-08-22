@@ -1,4 +1,10 @@
-export type Mood = "idle" | "listening" | "thinking" | "speaking" | "warning";
+export type Mood =
+  | "idle"
+  | "listening"
+  | "thinking"
+  | "speaking"
+  | "warning"
+  | "surprise";
 
 export type ChatRole = "user" | "assistant";
 
