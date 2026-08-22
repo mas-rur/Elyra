@@ -18,15 +18,15 @@ body {
 }
 
 body {
-  background: #0a0a0c;
-  color: #f2f0ea;
+  background: #f9f9f9;
+  color: #0a0a0c;
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: #7c8cff;
-  color: #0a0a0c;
+  background: #4f5ce0;
+  color: #ffffff;
 }
 
 ::-webkit-scrollbar {
@@ -36,12 +36,12 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #28282f;
+  background: #dedcd2;
   border-radius: 999px;
 }
 
 :focus-visible {
-  outline: 2px solid #7c8cff;
+  outline: 2px solid #4f5ce0;
   outline-offset: 2px;
 }
 

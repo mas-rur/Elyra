@@ -40,24 +40,24 @@ export default function Home() {
   const displayMood = isListening ? "listening" : mood;
 
   return (
-    <main className="flex min-h-screen flex-col bg-ink-950">
+    <main className="flex min-h-screen flex-col bg-paper-50">
       <Topbar hasKey={Boolean(settings.geminiApiKey)} />
 
       <div className="flex flex-1 flex-col items-center px-4">
         <div className="flex flex-col items-center pt-4 sm:pt-8">
           <MoodAvatar mood={displayMood} amplitude={amplitude} />
-          <p className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-mist-400">
+          <p className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-mist-600">
             {isListening ? "Listening" : MOOD_META[mood].label}
           </p>
           {interimTranscript && (
-            <p className="mt-2 max-w-sm text-center text-sm text-mist-300 animate-fade-up">
+            <p className="mt-2 max-w-sm text-center text-sm text-mist-600 animate-fade-up">
               &ldquo;{interimTranscript}&rdquo;
             </p>
           )}
         </div>
 
         {error && (
-          <div className="mt-4 max-w-md rounded-xl border border-warn-400/30 bg-warn-400/10 px-4 py-2.5 text-center text-sm text-warn-400 animate-fade-up">
+          <div className="mt-4 max-w-md rounded-xl border border-warn-500/30 bg-warn-500/10 px-4 py-2.5 text-center text-sm text-warn-500 animate-fade-up">
             {error}
             {!settings.geminiApiKey && (
               <>
@@ -76,9 +76,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="sticky bottom-0 flex flex-col items-center gap-4 border-t border-ink-800 bg-ink-950/90 px-4 py-5 backdrop-blur">
+      <div className="sticky bottom-0 flex flex-col items-center gap-4 border-t border-ink-200 bg-paper-50/90 px-4 py-5 backdrop-blur">
         {!supported && (
-          <p className="text-center text-xs text-mist-400 font-mono">
+          <p className="text-center text-xs text-mist-600 font-mono">
             Voice input isn&apos;t supported in this browser - try Chrome or
             Edge, or just type below.
           </p>
@@ -95,7 +95,7 @@ export default function Home() {
             <button
               type="button"
               onClick={stopSpeaking}
-              className="rounded-full border border-ink-700 px-3 py-1.5 text-xs font-mono text-mist-300 hover:border-signal-400/50 hover:text-signal-300"
+              className="rounded-full border border-ink-300 px-3 py-1.5 text-xs font-mono text-mist-600 hover:border-signal-500/50 hover:text-signal-500"
             >
               Stop
             </button>
