@@ -105,6 +105,13 @@ export function useVoiceAssistant(settings: ElyraSettings) {
         };
         setMessages((prev) => [...prev, assistantMsg]);
 
+        // A little delight when something actually happened in the world -
+        // this is the one moment "surprised" gets used, on purpose.
+        if (data.action) {
+          setMood("surprise");
+          await new Promise((r) => setTimeout(r, 1400));
+        }
+
         if (s.autoSpeak) {
           await speak(data.text);
         } else {
