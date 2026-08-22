@@ -35,12 +35,12 @@ export default function SettingsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-ink-950 px-4 pb-24 pt-6 text-paper-100 sm:px-8">
+    <main className="min-h-screen bg-paper-50 px-4 pb-24 pt-6 text-ink-950 sm:px-8">
       <div className="mx-auto flex max-w-xl flex-col gap-8">
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className="font-mono text-xs text-mist-400 hover:text-signal-300"
+            className="font-mono text-xs text-mist-600 hover:text-signal-500"
           >
             &larr; Back
           </Link>
@@ -63,7 +63,7 @@ export default function SettingsPage() {
             href="https://aistudio.google.com/apikey"
             target="_blank"
             rel="noreferrer"
-            className="text-xs text-signal-300 underline decoration-dotted"
+            className="text-xs text-signal-500 underline decoration-dotted"
           >
             Get a free key from Google AI Studio
           </a>
@@ -133,10 +133,10 @@ export default function SettingsPage() {
                 onChange={(v) => updateWhatsapp("defaultRecipient", v)}
                 placeholder="15551234567"
               />
-              <p className="text-xs leading-relaxed text-mist-400">
+              <p className="text-xs leading-relaxed text-mist-600">
                 To let Elyra receive and reply to WhatsApp messages on her
                 own, deploy this app and point Meta&apos;s webhook at{" "}
-                <code className="rounded bg-ink-800 px-1 py-0.5 font-mono">
+                <code className="rounded bg-paper-100 border border-ink-200 px-1 py-0.5 font-mono">
                   /api/whatsapp/webhook
                 </code>{" "}
                 - that part reads its credentials from server environment
@@ -149,12 +149,12 @@ export default function SettingsPage() {
         <div className="flex items-center gap-3">
           <button
             onClick={handleSave}
-            className="rounded-full bg-paper-100 px-5 py-2.5 text-sm font-medium text-ink-950 transition-opacity hover:opacity-90"
+            className="rounded-full bg-ink-950 px-5 py-2.5 text-sm font-medium text-paper-50 transition-opacity hover:opacity-90"
           >
             Save
           </button>
           {saved && (
-            <span className="font-mono text-xs text-signal-300 animate-fade-up">
+            <span className="font-mono text-xs text-signal-500 animate-fade-up">
               Saved
             </span>
           )}
@@ -174,11 +174,11 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex flex-col gap-3 rounded-2xl border border-ink-800 bg-ink-900/60 p-5">
+    <section className="flex flex-col gap-3 rounded-2xl border border-ink-200 bg-paper-100 p-5">
       <div>
-        <h2 className="font-display text-sm text-paper-100">{title}</h2>
+        <h2 className="font-display text-sm text-ink-950">{title}</h2>
         {description && (
-          <p className="mt-1 text-xs leading-relaxed text-mist-400">
+          <p className="mt-1 text-xs leading-relaxed text-mist-600">
             {description}
           </p>
         )}
@@ -203,13 +203,13 @@ function TextField({
 }) {
   return (
     <label className="flex flex-col gap-1.5">
-      <span className="font-mono text-xs text-mist-300">{label}</span>
+      <span className="font-mono text-xs text-mist-600">{label}</span>
       <input
         type={type}
         value={value}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="rounded-lg border border-ink-700 bg-ink-950 px-3 py-2 text-sm text-paper-100 outline-none placeholder:text-mist-400/60 focus:border-signal-400/60"
+        className="rounded-lg border border-ink-300 bg-paper-50 px-3 py-2 text-sm text-ink-950 outline-none placeholder:text-mist-600/60 focus:border-signal-500/60"
       />
     </label>
   );
@@ -228,11 +228,11 @@ function SelectField({
 }) {
   return (
     <label className="flex flex-col gap-1.5">
-      <span className="font-mono text-xs text-mist-300">{label}</span>
+      <span className="font-mono text-xs text-mist-600">{label}</span>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="rounded-lg border border-ink-700 bg-ink-950 px-3 py-2 text-sm text-paper-100 outline-none focus:border-signal-400/60"
+        className="rounded-lg border border-ink-300 bg-paper-50 px-3 py-2 text-sm text-ink-950 outline-none focus:border-signal-500/60"
       >
         {options.map((o) => (
           <option key={o.value} value={o.value}>
@@ -258,9 +258,9 @@ function ToggleField({
   return (
     <label className="flex items-center justify-between gap-4">
       <span>
-        <span className="block text-sm text-paper-100">{label}</span>
+        <span className="block text-sm text-ink-950">{label}</span>
         {description && (
-          <span className="block text-xs text-mist-400">{description}</span>
+          <span className="block text-xs text-mist-600">{description}</span>
         )}
       </span>
       <button
@@ -269,7 +269,7 @@ function ToggleField({
         aria-checked={checked}
         onClick={() => onChange(!checked)}
         className={`relative h-6 w-11 shrink-0 rounded-full transition-colors ${
-          checked ? "bg-signal-400" : "bg-ink-700"
+          checked ? "bg-signal-500" : "bg-ink-300"
         }`}
       >
         <span
