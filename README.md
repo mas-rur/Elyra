@@ -13,9 +13,20 @@ in beta: you bring your own Gemini API key, stored only in your browser.
 - **WhatsApp** - ask her to send a message and, if you've connected your
   WhatsApp Cloud API credentials in Settings, she'll send it via Meta's API
   and confirm back to you.
-- **Mood avatar** - the hexagon in the middle switches between three states:
-  idle/speaking (surprised), listening (wary/attentive), and thinking
-  (confused), using the animated SVGs you provided.
+- **Mood avatar** - the hexagon in the middle switches expression with what
+  Elyra's doing: neutral for idle/speaking, wary/attentive while listening,
+  confused while thinking, and it only goes wide-eyed "surprised" for a
+  couple of seconds right after she actually does something in the world
+  (like sending a WhatsApp message) - not as generic filler.
+
+## About neutral.svg
+
+You didn't have a neutral expression among the three SVGs you uploaded, so
+`public/avatars/neutral.svg` is one I built to match: same hexagon outline
+and ink/paper fill as your set, with simple calm, symmetric eyes and a slow
+natural blink instead of the more dramatic animated movement on the other
+three. If you've got a real "neutral" export from whatever generated the
+originals, just drop it in over this file with the same name.
 
 ## Getting started
 
@@ -74,7 +85,7 @@ app/
 components/                 MoodAvatar, MicButton, TranscriptPanel, Composer, Topbar
 hooks/                      useVoiceAssistant (state machine), useSpeechRecognition, useMicAmplitude
 lib/                        gemini.ts (REST calls), types, moods, storage, wav
-public/avatars/             your three SVGs
+public/avatars/             neutral, confused, suspicious (your SVGs) + surprised (yours, now reserved for the "surprise" moment)
 ```
 
 ## Beta security note
